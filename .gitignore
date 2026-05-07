@@ -1,0 +1,22 @@
+# Environment
+.env
+
+# ChromaDB vector store
+chroma/
+
+# Manifest (regenerated on run)
+manifest.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

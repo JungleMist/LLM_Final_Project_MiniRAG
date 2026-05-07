@@ -1,0 +1,25 @@
+docs:
+  docs_path: ./materials
+  allowed_exts: [".pdf", ".txt", ".md", ".html"]
+  manifest_path: ./manifest.json
+
+llm:
+  model: "gpt-oss"
+
+rag:
+  # chromadb
+  chromadb_path: ./chroma
+  chromadb_name: docs
+
+  # chunk
+  chunk_size: 800
+  chunk_overlap: 200
+
+  # embedding
+  emb_model: "qwen3-embedding"
+
+  # retrieval
+  top_k: 3
+
+
+
