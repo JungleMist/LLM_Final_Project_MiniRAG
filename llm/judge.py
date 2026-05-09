@@ -29,7 +29,8 @@ def evaluation(
         extra_body={
             "cache_salt": NRP_CACHE_SALT
         },
-        temperature=0 # be objective
+        temperature=0,  # be objective
+        response_format={"type": "json_object"}
     )
 
     return completion.choices[0].message.content
