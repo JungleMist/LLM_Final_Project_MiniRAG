@@ -7,53 +7,53 @@
     },
     {
       "id": 2,
-      "query": "How is the final grade calculated in the LLM course? What are the graded components and their weights?",
-      "answer": "The final grade consists of four components: Assignments (60%), Final Project (25%), Discussion Posts (10%), and Quizzes (5%). Assignments make up the largest portion of the grade."
+      "query": "What are the four project tracks available for the LLM course final project?",
+      "answer": "The final project offers four tracks to choose from: Track A (LLM Application / Mini Tool) — build a small application that uses an LLM for a specific task; Track B (Prompt Design & Evaluation) — systematically experiment with different prompts and measure their effect on LLM performance; Track C (Retrieval-Augmented Question Answering / Mini-RAG) — connect an LLM to a small document collection and build a Q&A system; Track D (Lightweight Fine-Tuning / Adaptation) — adapt a small pre-trained model on a labeled dataset for a supervised text task."
     },
     {
       "id": 3,
-      "query": "What topics are covered in Week 2 of the course?",
-      "answer": "Week 2 covers Transformer Architecture and Self-Attention, including encoder-decoder structure, self-attention mechanisms, positional encoding, pretraining strategies, design motivations, and working with a basic transformer model using PyTorch."
+      "query": "What topics are covered in Week 3 of the course?",
+      "answer": "Week 3 covers fine-tuning and adaptation of LLMs to tailor them towards particular NLP objectives, using sentiment analysis (binary classification) of movie reviews as the running example. Topics include methods for LLM adaptation, traditional classification with machine learning and deep learning, using pretrained LLMs for classification, and fine-tuning LLMs for classification. Students also review an article on LLM adaptation and risks of misalignment, and read Chapters 4 and 11 of the textbook."
     },
     {
       "id": 4,
       "query": "What is Retrieval-Augmented Generation (RAG) and what week does the course cover it?",
-      "answer": "Retrieval-Augmented Generation (RAG) is a technique that enhances LLM performance by retrieving relevant external knowledge before generating a response, helping to reduce hallucinations and enabling the model to use private or up-to-date information. It is covered in Week 5, along with embeddings, dense retrieval models, and vector databases, culminating in building a prototype RAG system for Q&A or summarization."
+      "answer": "Retrieval-Augmented Generation (RAG) is a technique that grounds LLM responses in external, verifiable data, helping to reduce hallucinations and allowing models to use private or up-to-date information. It is covered in Week 5, along with semantic search and implementing RAG with Python. The week uses Chapter 8 of the textbook as the primary reading."
     },
     {
       "id": 5,
       "query": "What are the three types of prompting strategies discussed in the course's prompt engineering module?",
-      "answer": "The prompt engineering module (Week 4) covers three prompting strategies: zero-shot prompting (asking the model without any examples), few-shot prompting (providing a small number of input-output examples), and chain-of-thought prompting (guiding the model to reason step by step before producing a final answer)."
+      "answer": "The prompt engineering module (Week 4) covers three prompting strategies: zero-shot prompting (asking the model without any examples), few-shot prompting (providing a small number of input-output examples), and chain-of-thought prompting (guiding the model to reason step by step before producing a final answer). The week also covers how to use these techniques with Python and LangChain."
     },
     {
       "id": 6,
-      "query": "What is the late work policy for assignments?",
-      "answer": "If no prior arrangements are made with the instructor, there is a one-day grace period on assignments. After the grace period, 5% will be deducted from the assignment grade for each subsequent late day. Students are encouraged to contact the instructor before a due date to make alternative arrangements."
+      "query": "What are the required deliverables for the LLM course final project?",
+      "answer": "The final project has four required deliverables: (1) a Project Proposal (~1 page PDF) due May 18, including the chosen track, task description, planned models and libraries, data source and size, evaluation plan, and a backup plan; (2) a Final Report (~4–6 pages PDF) structured around introduction, data and setup, methods, experiments and results, qualitative analysis, ethics and limitations, and conclusion; (3) Code & Artifacts as a zip file containing main scripts, a README, any datasets, and readable organized code; (4) a Short Presentation (5–10 minutes) covering problem motivation, what was built, key results, a demo, and lessons learned."
     },
     {
       "id": 7,
       "query": "What model optimization techniques are covered in Week 8 of the course?",
-      "answer": "Week 8 covers model optimization and approximation techniques including model compression, knowledge distillation, quantization, and pruning. The module also examines the motivations behind these approximations and the trade-offs between model size, inference speed, and accuracy."
+      "answer": "Week 8 covers optimization and approximation techniques aimed at reducing the massive computational demands of LLM use. Topics include parameter-efficient fine-tuning, distillation, quantization, and pruning. The week examines the motivations behind these approaches and the trade-offs between model size, inference speed, and accuracy. Students finish reading Chapter 12 of the textbook and complete an assignment on evaluation and approximation."
     },
     {
       "id": 8,
-      "query": "What evaluation metrics and frameworks does the course cover for assessing LLM performance?",
-      "answer": "Week 7 covers multiple evaluation frameworks, including human evaluation, automated metrics such as BLEU and ROUGE, benchmark suites like GLUE, and the LLM-as-a-judge approach. The module also addresses identifying and safeguarding against hallucinations, prompt injection, bias, and misuse."
+      "query": "What evaluation topics and frameworks does the course cover for assessing LLM performance?",
+      "answer": "Week 7 explores model capacity, evaluation, and benchmarking to help determine which LLMs are best suited for a given use case. Topics include capacity and efficiency, evaluation metrics, and benchmark suites. Students read parts of Chapter 12 of the textbook and two online articles about evaluation metrics, and complete an assignment on evaluation. The week also includes a discussion post responding to a reading about benchmarking LLMs."
     },
     {
       "id": 9,
       "query": "What Python packages and tools will be used throughout the LLM course?",
-      "answer": "The course makes extensive use of Python and various tools including Hugging Face libraries (for open-source models), the OpenAI API (for proprietary models), LangChain (for building agentic LLM systems), and PyTorch (for implementing transformer models). All installation and usage instructions are covered as needed during the course."
+      "answer": "The course makes extensive use of Python and several key tools. Week 1 introduces the Hugging Face transformers library (for open-source models) and the OpenAI API (for proprietary models). Week 4 introduces LangChain for building agentic LLM systems with prompt engineering pipelines. Week 6 further covers LangChain in the context of agentic LLMs, ReAct, AutoGPT, and MCP. PyTorch is used when implementing transformer models from scratch. Students also set up accounts for JupyterHub, ChatGPT, OpenAI, and Hugging Face in Week 1."
     },
     {
       "id": 10,
       "query": "What is the difference between fine-tuning and zero-shot inference in LLMs?",
-      "answer": "Zero-shot inference involves prompting a pretrained LLM to perform a task without any task-specific training examples, relying solely on the model's pretrained knowledge. Fine-tuning, covered in Week 3, involves further training a pretrained model on a labeled task-specific dataset to specialize it for a particular application. Fine-tuning typically yields better performance on the target task but requires labeled data, while zero-shot inference is more flexible and requires no additional training."
+      "answer": "Zero-shot inference involves prompting a pretrained LLM to perform a task without any task-specific training examples, relying solely on the model's pretrained knowledge. It is covered in Week 4 as part of prompt engineering. Fine-tuning, covered in Week 3, involves further training a pretrained model on a labeled task-specific dataset to specialize it for a particular application. Fine-tuning typically yields better performance on the target task but requires labeled data, while zero-shot inference is more flexible and requires no additional training."
     },
     {
       "id": 11,
-      "query": "What are the final project deadlines for Week 10?",
-      "answer": "For the final project, the first prototype is due on Monday of Week 10 (June 1st). Peer feedback to classmates is due that Friday (June 5th), and the final version of the project is due the following Monday (June 8th). These are not flexible deadlines unless discussed in advance with the instructor."
+      "query": "What must the LLM course final project proposal include, and when was it due?",
+      "answer": "The Project Proposal (approximately 1 page, PDF) was due Monday May 18. It must include: the chosen track (A, B, C, or D) and a working title; a task description and motivation (3–5 sentences); planned models and libraries/frameworks; data source, size, and any labeling needed; an evaluation plan specifying metrics, number of examples, and any user feedback; and a simple backup plan in case the primary approach does not work. Grading is based on project design and scope, including a clear and well-designed task and a scope appropriate for the course level and timeline."
     }
   ],
   "metadata": {

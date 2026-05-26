@@ -1,4 +1,6 @@
+import time
 from pathlib import Path
+import pytest
 
 from llm.judge import evaluation
 from minirag import embedder, chunker
@@ -12,7 +14,9 @@ def test_rag_embedder():
         "The cat sat on the mat.",
     ]
     results = embedder.batch_embed(texts)
-    print([len(result) for result in results])
+    assert(type(results) == list and type(results[0] == list))
+    # print(type(results[0]))
+    # print([len(result) for result in results])
 
 def test_rag_chunker():
     raw_docs = chunker.load_documents([Path(DOCS_PATH) / 'LLM_Syllabus.pdf'])
@@ -38,15 +42,10 @@ def test_rag_response():
 def test_judge():
     rag = MiniRAG()
     query = "What's the grading criteria for this class?"
+    reference = "Quizzes 5%, Discussion Points 10%, Assignments 60% and Final Project 25%."
     contents, answer = rag.response(query)
-    comment = evaluation(query, contents, answer)
+    start = time.time()
+    comment = evaluation(query, contents, answer, reference)
+    print("time: ", time.time()-start)
     print(comment)
 
-if __name__ == "__main__":
-    # test_rag_chunker()
-    # test_rag_retrieve()
-    # indexer.changed_files()
-    # test_rag_response()
-    # test_judge()
-
-    rag = MiniRAG(force_initial=False)

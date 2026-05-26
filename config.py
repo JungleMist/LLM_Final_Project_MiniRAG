@@ -27,8 +27,8 @@ CHROMADB_PATH: str = "./chroma"
 DB_NAME: str = "docs"
 
 ## Chunk
-CHUNK_SIZE: int = 800
-CHUNK_OVERLAP: int = 200
+CHUNK_SIZE: int = 400
+CHUNK_OVERLAP: int = 100
 
 ## Embedding
 HF_TOKEN: str = os.getenv("HF_TOKEN")

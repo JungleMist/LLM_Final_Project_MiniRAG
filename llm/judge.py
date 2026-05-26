@@ -9,7 +9,7 @@ from ragas.embeddings import LangchainEmbeddingsWrapper
 from ragas.metrics import faithfulness, context_precision, answer_relevancy, answer_correctness, answer_similarity
 from ragas.dataset_schema import SingleTurnSample
 
-from config import NRP_TOK, NRP_URL, MODEL, EMBEDDING_MODEL
+from config import MODEL, EMBEDDING_MODEL, NRP_TOK, NRP_URL
 
 _llm = LangchainLLMWrapper(ChatOpenAI(
     model=MODEL, api_key=NRP_TOK, base_url=NRP_URL, temperature=0,
@@ -30,14 +30,17 @@ answer_correctness.answer_similarity = answer_similarity
 _METRICS = [faithfulness, context_precision, answer_relevancy, answer_correctness]
 
 
-def evaluation(query: str, contents: str, answer: str, reference: str) -> dict:
+async def _score_all(sample):
+    scores = await asyncio.gather(*[m.single_turn_ascore(sample) for m in _METRICS])
+    return {m.name: score for m, score in zip(_METRICS, scores)}
+
+
+def evaluation(query: str, contents: str | None, answer: str, reference: str) -> dict:
+
     sample = SingleTurnSample(
         user_input=query,
         retrieved_contexts=[contents],
         response=answer,
         reference=reference,
     )
-    return {
-        m.name: asyncio.run(m.single_turn_ascore(sample))
-        for m in _METRICS
-    }
+    return asyncio.run(_score_all(sample))
