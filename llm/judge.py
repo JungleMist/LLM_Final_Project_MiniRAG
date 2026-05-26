@@ -44,3 +44,20 @@ def evaluation(query: str, contents: str | None, answer: str, reference: str) ->
         reference=reference,
     )
     return asyncio.run(_score_all(sample))
+
+
+_METRICS_NO_CTX = [answer_relevancy, answer_correctness]
+
+
+async def _score_no_ctx(sample):
+    scores = await asyncio.gather(*[m.single_turn_ascore(sample) for m in _METRICS_NO_CTX])
+    return {m.name: score for m, score in zip(_METRICS_NO_CTX, scores)}
+
+
+def evaluation_no_rag(query: str, answer: str, reference: str) -> dict:
+    sample = SingleTurnSample(
+        user_input=query,
+        response=answer,
+        reference=reference,
+    )
+    return asyncio.run(_score_no_ctx(sample))
