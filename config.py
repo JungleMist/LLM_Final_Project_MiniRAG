@@ -27,8 +27,8 @@ CHROMADB_PATH: str = "./chroma"
 DB_NAME: str = "docs"
 
 ## Chunk
-CHUNK_SIZE: int = 400
-CHUNK_OVERLAP: int = 100
+CHUNK_SIZE: int = 800
+CHUNK_OVERLAP: int = 200
 
 ## Embedding
 HF_TOKEN: str = os.getenv("HF_TOKEN")
@@ -39,6 +39,9 @@ TOP_K: int = 3
 
 ## Prompt
 PROMPT_PATH: str = "./prompts/retrieval.md"
+
+# Output
+OUTPUT_NAME: str = "output_2.json"
 
 
 if __name__ == "__main__":

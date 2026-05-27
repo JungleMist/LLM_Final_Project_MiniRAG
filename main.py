@@ -1,3 +1,6 @@
+import time
+
+from config import CHUNK_SIZE, CHUNK_OVERLAP, TOP_K, OUTPUT_NAME
 from minirag.retrieval import MiniRAG
 from llm.judge import evaluation
 import json
@@ -11,6 +14,7 @@ def main():
 
     results = []
     for item in dataset["data"]:
+        start_time = time.time()
         query = item["query"]
         reference = item["answer"]
         contents, llm_answer = rag.response(query)
@@ -26,11 +30,19 @@ def main():
         print(f"[{item['id']}] done — faithfulness={eval_dict.get('faithfulness'):.2f}, "
               f"correctness={eval_dict.get('answer_correctness'):.2f}")
 
-    output = {"data": results}
-    with open("output.json", "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        metadata = {
+            "chunk size": CHUNK_SIZE,
+            "chunk overlap": CHUNK_OVERLAP,
+            "top k": TOP_K
+        }
+        output = {
+            "metadata": metadata,
+            "data": results
+        }
+        with open(OUTPUT_NAME, "w", encoding="utf-8") as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"Saved {len(results)} results to output.json")
+        print(f"Saved {len(results)} results to {OUTPUT_NAME} | {time.time()-start_time}")
 
 
 if __name__ == "__main__":

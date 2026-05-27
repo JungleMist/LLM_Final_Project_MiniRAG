@@ -52,7 +52,7 @@ class MiniRAG:
                  manifest_path: str = MANIFEST_PATH,
                  chromadb_path: str = CHROMADB_PATH,
                  db_name: str = DB_NAME,
-                 force_initial=True):
+                 force_initial=False):
         # Docs Load and Chunk
         docs_path = Path(docs_path)
         manifest_path = Path(manifest_path)

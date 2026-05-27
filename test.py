@@ -15,8 +15,6 @@ def test_rag_embedder():
     ]
     results = embedder.batch_embed(texts)
     assert(type(results) == list and type(results[0] == list))
-    # print(type(results[0]))
-    # print([len(result) for result in results])
 
 def test_rag_chunker():
     raw_docs = chunker.load_documents([Path(DOCS_PATH) / 'LLM_Syllabus.pdf'])
