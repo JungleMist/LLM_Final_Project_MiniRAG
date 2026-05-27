@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "chunk size": 800,
+    "chunk overlap": 200,
+    "top k": 3
+  },
+  "data": [
+    {
+      "id": 1,
+      "query": "What is the required textbook for COM SCI-X 450.46 Large Language Models?",
+      "answer": "The required textbook is 'Hands-On Large Language Models: Language Understanding and Generation' by Jay Alammar and Maarten Grootendorst (ISBN: 1098150961).",
+      "llm_answer": "The excerpt you provided does not list a required textbook for **COM SCI‑X 450.46 – Large Language Models**. To find the official textbook (or any other required readings), you should check one of the following sources:\n\n1. **Course Syllabus** – Usually posted on the university’s learning‑management system (Canvas, Blackboard, Moodle, etc.). The syllabus typically has a “Required Textbook” or “Reading Materials” section.  \n2. **Departmental Course Listings** – The Computer Science department’s website often includes a page for each course that lists the textbook and any supplemental resources.  \n3. **Instructor’s Announcement or Email** – Instructors often send an introductory email or post an announcement at the start of the term with details about the textbook, edition, and where to purchase or access it.  \n4. **University Bookstore** – Search the course code (COM SCI‑X 450.46) in the online catalog of the campus bookstore; the listing will show the required book, its ISBN, and pricing options.\n\nIf you have access to any of those resources, you should be able to locate the exact title, author, edition, and ISBN. If you still can’t find the information, feel free to let me know and I can help you draft an email to the instructor or department requesting the textbook details.",
+      "evaluation": {
+        "faithfulness": 0.1,
+        "context_precision": 0.0,
+        "answer_relevancy": 0.9910508772900348,
+        "answer_correctness": 0.2068355368520691
+      }
+    }
+  ]
+}
